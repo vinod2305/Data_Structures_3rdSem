@@ -19,7 +19,7 @@ precedence getToken(char *symbol, int *n){
                 case '*': return times;
                 case '/': return divide;
                 case '%': return mod;
-		case ';': return eos;
+		case '\0': return eos;
                 default: return operand;
         }
 }
@@ -67,7 +67,7 @@ int eval(){
 void main()
 {
 	int result;
-	printf("Enter postfix expression ending with %c\n",59);
+	printf("Enter postfix expression\n");
 	scanf("%s",expr);
 	result=eval();
 	printf("Result is %d\n",result);
